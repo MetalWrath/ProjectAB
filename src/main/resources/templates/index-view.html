@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+
+    <style>
+        table {
+            width: 600px; /* Ширина таблицы */
+            border: 2px firebrick; /* Рамка вокруг таблицы */
+            margin: auto; /* Выравниваем таблицу по центру окна  */
+        }
+        td {
+            text-align: center; /* Выравниваем текст по центру ячейки */
+        }
+    </style>
+
+</head>
+<body style="background-color: darkolivegreen;">
+
+<h1 style="text-align: center;">Hello, my master!</h1>
+<br><br>
+<h3 style="text-align: left;">Какую валюту будем оценивать по отношению к доллару сегодня? </h3>
+<br>
+<form method="post" action="/">
+    <input type="radio" name="currency" id="cur1" value="RUB" required>  <label for="cur1">Российский рубль</label>
+    <br>
+    <input type="radio" name="currency" id="cur2" value="INR" required>  <label for="cur2">Индийская рупия</label>
+    <br>
+    <input type="radio" name="currency" id="cur3" value="EUR" required>  <label for="cur3">Евро</label>
+    <br>
+    <br>
+
+    <input type="submit" value="Визуализировать!" formtarget="_blank">
+
+<!--    formtarget="_blank"-->
+
+</form>
+<br><br>
+
+<h3 style="">
+
+    <table>
+        <tr><th></th><th>Рубль:</th><th>Рупия:</th><th>Евро:</th></tr> <!--ряд с ячейками заголовков-->
+        <tr><td>Сегодня</td><td th:text="${rubToday}"></td><td th:text="${inrToday}"></td><td th:text="${eurToday}"></td></tr> <!--ряд с ячейками тела таблицы-->
+        <tr><td>Вчера</td><td th:text="${rubYesterday}"></td><td th:text="${inrYesterday}"></td><td th:text="${eurYesterday}"></td></tr> <!--ряд с ячейками тела таблицы-->
+    </table>
+</h3>
+</body>
+</html>
